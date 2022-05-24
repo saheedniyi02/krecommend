@@ -7,12 +7,9 @@ engine = create_engine("sqlite:///database.db", echo=True)
 connection = engine.connect()
 
 recommender = KRecommend(k=4)
-recommender.fit_from_db("Posts", "id", "content", connection)
+recommender.fit_on_sql_table("Posts", "id",["title","content"], connection)
+title="Nasarawa gov tasks traditional rulers on sustained peace, security"
 text="""
-Nasarawa gov tasks traditional rulers on sustained peace, security
-Collins Sunday
-
- 
 Nasarawa State Governor, Abdullahi Sule, has charged traditional rulers across the 13 Local Government Areas of the state to ensure that they sustain the peace being enjoyed in their respective communities and report anyone found causing trouble to security agencies.
 
 Speaking at Agyaragu, Obi Local Government Area, on Monday, during the ’25 years on the throne celebration’ of the Zhe Migili, His Royal Majesty, Dr. Ayuba Agwadu, Sule said the campaign on peace and security became important because no society could be developed in an atmosphere of rancour.
@@ -39,5 +36,5 @@ While highlighting his personal experiences, developments and challenges over th
 Our correspondent reports that members of the National and State Assemblies, political appointees and traditional rulers from Nasarawa and neighbouring states, attended the ceremony.
 
 """
-recommended=recommender.predict_from_db(text)
+recommended=recommender.predict_on_sql_table([title,text])
 print(recommended)
