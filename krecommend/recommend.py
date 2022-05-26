@@ -105,7 +105,7 @@ class KRecommend:
         self.__is_trained_sql = True
         self.__is_trained = False
         self.len_vocabulary=len(self.__vectorizer.vocabulary_)
-        print(f"KRecommender fitted successfully with {self.len_vocabulary} words in the vocabulary!")
+        print(f"KRecommender fitted successfully with {self.len_vocabulary} words in the vocabulary!\nEnsur you close your sql connection!")
 
     def predict(self, test):
         
