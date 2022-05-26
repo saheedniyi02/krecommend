@@ -1,13 +1,14 @@
 from multiprocessing import connection
 from sqlalchemy import create_engine
 import pandas as pd
-from recommend import KRecommend
+from krecommend.recommend import KRecommend
+
 
 engine = create_engine("sqlite:///database.db", echo=True)
 connection = engine.connect()
 
 recommender = KRecommend(k=4)
-recommender.fit_on_sql_table("Posts", "id",["title","content"], connection)
+recommender.fit_on_sql_table(table_name="Posts",id_column= "id",text_columns=["content","title"],connection= connection)
 title="Nasarawa gov tasks traditional rulers on sustained peace, security"
 text="""
 Nasarawa State Governor, Abdullahi Sule, has charged traditional rulers across the 13 Local Government Areas of the state to ensure that they sustain the peace being enjoyed in their respective communities and report anyone found causing trouble to security agencies.
@@ -36,5 +37,5 @@ While highlighting his personal experiences, developments and challenges over th
 Our correspondent reports that members of the National and State Assemblies, political appointees and traditional rulers from Nasarawa and neighbouring states, attended the ceremony.
 
 """
-recommended=recommender.predict_on_sql_table([title,text])
+recommended=recommender.predict_on_sql_table([text,title])
 print(recommended)

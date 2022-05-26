@@ -1,5 +1,4 @@
 from curses import meta
-from pickle import TRUE
 import pandas as pd
 from sqlalchemy import create_engine, MetaData, Column, Integer, String, Table
 
@@ -14,10 +13,11 @@ posts = Table(
     Column("id", Integer, primary_key=True),
     Column("title", String),
     Column("content", String),
+    Column("views",Integer)
 )
 
 meta.create_all(engine)
-data = [{"title": df["title"][i], "content": df["content"][i]} for i in range(200)]
+data = [{"title": df["title"][i], "content": df["content"][i],"views":i} for i in range(200)]
 ins = posts.insert()
 
 conn = engine.connect()
