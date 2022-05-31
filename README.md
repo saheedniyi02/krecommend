@@ -1,6 +1,7 @@
 # KRecommend
 A python package for creating content-based text recommender systems on pandas dataframes and SQLAlchemy tables.
 
+## Problem source and solution 
 ## Dependencies
 Krecommend requires the following dependencies:
 
@@ -15,10 +16,13 @@ Krecommend requires the following dependencies:
 ```shell
 $ pip install krecommend
 ```
-## usage
+## How to use
 #### For a pandas data frame.
 
 #### For an SQL alchemy table.
+
+
+#### For a flask-sqlalchemy table
 
 
 #### Warning and possible sources of error
