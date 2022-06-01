@@ -136,13 +136,13 @@ connection.close()
 The recommendations can easily be gotten using the `.predict_on_sql_table` as seen above.
 
 #### Warning and possible sources of error
-1) Only text columns are accepted in the text_columns parameter.
-Integer or float columns will return an error.<br>
-2) KRecommend only saves information on your table at the time it is fitted, any information on your table added after
+<ol><li>Only text columns are accepted in the text_columns parameter.
+Integer or float columns will return an error.</li><br>
+<li>KRecommend only saves information on your table at the time it is fitted, any information on your table added after
 KRecommend has been fitted won't exist in the recommendations generated.
-Implications: <br>i)A recommendation might have been deleted (after fitting) from the table as at the time it is being recommend so it might no longer be found in the database.
-              <br>ii)Some content might have been modified which might affect the strength of the recommendations.
-<br><br>Solution: it is important to fit KRecommend again at intervals,so changes in contents will be reflected in the recommendations.
-<br>3)It is good practice to close the connection after fitting.
-<br>4)There must be k+1 (k represents the requested no of recommendations) items in the database.
+<ul><li>Implications: <ol><li>A recommendation might have been deleted (after fitting) from the table as at the time it is being recommend so it might no longer be found in the database.</li>
+              <li>Some content might have been modified which might affect the strength of the recommendations.<li></li></ol>
+<li>Solution: it is important to fit KRecommend again at intervals,so changes in contents will be reflected in the recommendations.</li></li></ul>
+<li>It is good practice to close the connection after fitting.</li>
+<li>There must be k+1 (k represents the requested no of recommendations) items in the database.</li>
 
