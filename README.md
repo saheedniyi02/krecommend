@@ -35,10 +35,17 @@ recommender.fit(dataframe, text_columns=["content","title"])
 
 ```
 ##### make predictions.
+```py
+new_content="This is a test content"
+new_title="This is a test title"
+recommendations=recommender.predict(test=[new_content,new_title])
+```
 
-###### Explain column names
-###### Explain index
-###### Explain returns
+The returned recommendations is a simple python dictionary with length (k, the number of requested recommendations)\
+Each key in the dictionary represents the index (value of the "id" in this case) of that particular
+recommendation in the dataframe, while the value represents the similarity (in %).
+
+
 
 
 #### For an SQL alchemy table.
@@ -84,7 +91,7 @@ recommendations=recommender.predict_on_sql_table(test=[new_content,new_title])
 ```
 The returned recommendations is a simple python dictionary with length (k, the number of requested recommendations)\
 Each key in the dictionary represents the primary_key of that particular
-recommendation in the data base, while the value represents the similarity (in %).
+recommendation in the database, while the value represents the similarity (in %).
 
 
 
