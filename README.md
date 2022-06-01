@@ -1,9 +1,9 @@
 # KRecommend
 A python package for creating content-based text recommender systems on pandas dataframes and SQLAlchemy tables.
 
-## Problem source and solution 
-## Dependencies
-Krecommend requires the following dependencies:
+The recommendations are gotten by using cosine similarity to get similar items to a requested item.
+### Dependencies
+krecommend requires the following dependencies:
 
 <ul><li>Python</li>
 <li>NumPy</li>
