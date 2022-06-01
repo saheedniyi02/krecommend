@@ -50,7 +50,7 @@ recommendation in the dataframe, while the value represents the similarity (in %
 
 
 #### For an SQL alchemy table.
-##### A simple SQLAlchemy table (ensure you add items to the table when testing the code)
+##### A simple SQLAlchemy table (ensure you add items to your table)
 ```py
 from curses import meta
 from sqlalchemy import create_engine, MetaData, Column, Integer, String, Table
@@ -99,7 +99,7 @@ recommendation in the database, while the value represents the similarity (in %)
 
 
 #### For a flask-sqlalchemy table
-###### create the simple Flask-SQLAlchemy table (ensure you add items to the table when testing the code)
+###### create the simple Flask-SQLAlchemy table (ensure you add items to your table)
 ```py
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
