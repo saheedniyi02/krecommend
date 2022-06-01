@@ -96,6 +96,8 @@ The returned recommendations is a simple python dictionary with length (k, the n
 Each key in the dictionary represents the primary_key of that particular
 recommendation in the database, while the value represents the similarity (in %).
 
+The primary key can then be used to query the table to get more information on the recommendations.
+
 
 
 #### For a flask-sqlalchemy table
