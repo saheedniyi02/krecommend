@@ -145,5 +145,5 @@ KRecommend has been fitted won't exist in the recommendations generated.
               <li>Some content might have been modified which might affect the strength of the recommendations.<li></li></ol>
 <li>Solution: it is important to fit KRecommend again at intervals,so changes in contents will be reflected in the recommendations.For example you can schedule  the `.fit_on_sql_table` method to run every hour (or any interval of your choice)</li></li></ul>
 <li>It is good practice to close the connection after fitting.</li>
-<li>There must be k+1 (k represents the requested no of recommendations) items in the database.</li>
+<li>There must be k+1 (k represents the requested no of recommendations) items in the requested table.</li>
 
