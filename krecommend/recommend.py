@@ -115,7 +115,7 @@ class KRecommend:
             a list of columns the similarity should be calculated on,ensure the column has a type "string"
 
         connection: an SQLAlchemy connection
-            the SQLAlchemy connection of the database,the connection should be closed after KRecommend has been fitted
+            the SQLAlchemy connection of the database "engine.connect()" ,the connection should be closed after KRecommend has been fitted
 
         Returns
         _______
