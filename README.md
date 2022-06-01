@@ -46,7 +46,7 @@ recommendations=recommender.predict(test=[test_content,test_title])
 
 The returned recommendations is a simple python dictionary with length (k, the number of requested recommendations)\
 Each key in the dictionary represents the index (value of the "id" in this case) of that particular
-recommendation in the dataframe, while the value represents the similarity (in %).
+recommendation in the dataframe, while the value represents the similarity (in %),The items in the dictionary are arranged in descending order of the similarity.
 
 
 
@@ -96,7 +96,9 @@ recommendations=recommender.predict_on_sql_table(test=[test_content,test_title])
 ```
 The returned recommendations is a simple python dictionary with length (k, the number of requested recommendations)\
 Each key in the dictionary represents the primary_key of that particular
-recommendation in the database, while the value represents the similarity (in %).
+recommendation in the database, while the value represents the similarity (in %).The items in the dictionary are arranged in descending order of the similarity.
+
+
 
 The primary key can then be used to query the table to get more information on the recommendations.
 
