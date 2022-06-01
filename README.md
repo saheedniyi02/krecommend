@@ -16,7 +16,8 @@ krecommend requires the following dependencies:
 ```shell
 $ pip install krecommend
 ```
-## How to use
+## How to use 
+The detailed examples can be found <a href="https://github.com/saheedniyi02/Test-krecommend">here</a>
 #### For a pandas data frame.
 #Provided with a simple dataframe with index "id" ,
 text (string) columns "title" and "content","int" column "Views".
