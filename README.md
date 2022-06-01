@@ -13,6 +13,7 @@ krecommend requires the following dependencies:
 <li>SQLAlchemy for dealing with SQL tables</li></ul>
 
 ## Installation
+Installation can be done with `pip`:
 ```shell
 $ pip install krecommend
 ```
