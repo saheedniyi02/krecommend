@@ -179,7 +179,7 @@ class KRecommend:
         self.__is_trained = False
         self.len_vocabulary = len(self.__vectorizer.vocabulary_)
         print(
-            f"KRecommender fitted successfully with {self.len_vocabulary} words in the vocabulary!\nEnsur you close your sql connection!"
+            f"KRecommender fitted successfully with {self.len_vocabulary} words in the vocabulary!\nEnsure you close your sql connection!"
         )
         return self
 
@@ -280,3 +280,5 @@ class KRecommend:
         else:
             recommendations.pop(min_id)
         return recommendations
+        
+        #the .predict and .predict_on_sql_table methods are the same for now, they have been seperated so as to develop and add new features to them independently
