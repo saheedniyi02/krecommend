@@ -133,7 +133,7 @@ recommender.fit_on_sql_table(table_name="Posts",id_column= "id",text_columns=["c
 #close connection
 connection.close()
 ```
-The recommendations can easily be gotten using the .predict_on_sql_table as seen above.
+The recommendations can easily be gotten using the `.predict_on_sql_table` as seen above.
 
 #### Warning and possible sources of error
 1) Only text columns are accepted in the text_columns parameter.
