@@ -26,7 +26,7 @@ KRecommenm
 
 
 #### For an SQL alchemy table.
-#### A simple SQLAlchemy table
+##### A simple SQLAlchemy table
 ```py
 from curses import meta
 from sqlalchemy import create_engine, MetaData, Column, Integer, String, Table
@@ -60,7 +60,7 @@ recommender.fit_on_sql_table(table_name="Posts",id_column= "id",text_columns=["c
 connection.close()
 ```
 
-###### make predictions
+###### get recommendations.
 ```py
 new_content="This is a test content"
 new_title="This is a test title"
