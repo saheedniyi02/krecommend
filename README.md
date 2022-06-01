@@ -18,8 +18,24 @@ $ pip install krecommend
 ```
 ## How to use
 #### For a pandas data frame.
-KRecommenm
-###### Explain type of data frame.
+#Provided with a simple dataframe with index "id" ,
+text (string) columns "title" and "content","int" column "Views".
+
+##### load the dataframe
+```py
+import pandas as pd
+dataframe = pd.read_csv("file_path", index_col=0)
+#set the id as the index
+dataframe.set_index("id")
+```
+##### import,initialize and fit on a pandas dataframe
+```py
+recommender = KRecommend(k=2)
+recommender.fit(dataframe, text_columns=["content","title"])
+
+```
+##### make predictions.
+
 ###### Explain column names
 ###### Explain index
 ###### Explain returns
