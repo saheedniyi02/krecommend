@@ -98,9 +98,39 @@ recommendation in the database, while the value represents the similarity (in %)
 
 
 #### For a flask-sqlalchemy table
-####### Explain difference.
+####### create a simple Flask-SQLAlchemy table
+```py
+from flask import Flask,jsonify
+from flask_sqlalchemy import SQLAlchemy
 
+app = Flask(__name__)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
+db = SQLAlchemy(app)
 
+"""a table with name 'Posts', primary_key 'id', text (string) columns 'title' and 'content' and Int column 'views' """
+class Posts(db.Model):
+    __tablename__="Posts"
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(64))
+    content = db.Column(db.String(64))
+    views = db.Column(db.Integer, unique=True, index=True, nullable=False)
+
+#database connection
+connection=db.engine.connect()
+
+```
+
+###### import,initialize and fit on SQLAlchemy table
+```py
+from krecommend.recommend import KRecommend
+#k represents the number of documents to be recommend
+recommender = KRecommend(k=4)
+recommender.fit_on_sql_table(table_name="Posts",id_column= "id",text_columns=["content","title"],connection= connection)
+#close connection
+connection.close()
+```
+
+##### Getting the recommendations works same way as <link>
 #### Warning and possible sources of error
 
 ####
