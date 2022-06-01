@@ -56,6 +56,8 @@ from krecommend.recommend import KRecommend
 #k represents the number of documents to be recommend
 recommender = KRecommend(k=4)
 recommender.fit_on_sql_table(table_name="Posts",id_column= "id",text_columns=["content","title"],connection= connection)
+#close connection
+connection.close()
 ```
 
 ###### make predictions
