@@ -98,9 +98,9 @@ recommendation in the database, while the value represents the similarity (in %)
 
 
 #### For a flask-sqlalchemy table
-####### create a simple Flask-SQLAlchemy table
+###### create the simple Flask-SQLAlchemy table
 ```py
-from flask import Flask,jsonify
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
