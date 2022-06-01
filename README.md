@@ -18,11 +18,22 @@ $ pip install krecommend
 ```
 ## How to use
 #### For a pandas data frame.
+###### Explain type of data frame.
+###### Explain column names
+###### Explain index
+###### Explain returns
+
 
 #### For an SQL alchemy table.
+###### Explain db
+###### Explain table name
+###### Explain list of text columns
+
+
 
 
 #### For a flask-sqlalchemy table
+####### Explain difference.
 
 
 #### Warning and possible sources of error
