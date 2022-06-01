@@ -36,7 +36,7 @@ recommender = KRecommend(k=2)
 recommender.fit(dataframe, text_columns=["content","title"])
 
 ```
-##### make predictions.
+##### get recommendations.
 ```py
 test_content="This is a test content"
 test_title="This is a test title"
