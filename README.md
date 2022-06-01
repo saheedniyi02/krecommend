@@ -71,11 +71,12 @@ posts = Table(
 )
 
 
-#database connection
-connection = engine.connect()
+
 ```
 ###### import,initialize and fit on SQLAlchemy table
 ```py
+#database connection
+connection = engine.connect()
 from krecommend.recommend import KRecommend
 #k represents the number of documents to be recommend
 recommender = KRecommend(k=4)
@@ -115,15 +116,15 @@ class Posts(db.Model):
     content = db.Column(db.String(64))
     views = db.Column(db.Integer, unique=True, index=True, nullable=False)
 
-#database connection
-connection=db.engine.connect()
-
 ```
 
 ###### import,initialize and fit on SQLAlchemy table
 ```py
+
 from krecommend.recommend import KRecommend
 #k represents the number of documents to be recommend
+#database connection
+connection=db.engine.connect()
 recommender = KRecommend(k=4)
 recommender.fit_on_sql_table(table_name="Posts",id_column= "id",text_columns=["content","title"],connection= connection)
 #close connection
