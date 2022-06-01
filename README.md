@@ -36,9 +36,10 @@ recommender.fit(dataframe, text_columns=["content","title"])
 ```
 ##### make predictions.
 ```py
-new_content="This is a test content"
-new_title="This is a test title"
-recommendations=recommender.predict(test=[new_content,new_title])
+test_content="This is a test content"
+test_title="This is a test title"
+#the .predict method accepts lists only, even if the length is 1.
+recommendations=recommender.predict(test=[test_content,test_title])
 ```
 
 The returned recommendations is a simple python dictionary with length (k, the number of requested recommendations)\
@@ -85,9 +86,10 @@ connection.close()
 
 ###### get recommendations.
 ```py
-new_content="This is a test content"
-new_title="This is a test title"
-recommendations=recommender.predict_on_sql_table(test=[new_content,new_title])
+test_content="This is a test content"
+test_title="This is a test title"
+#the .predict_on_sql_table method accepts lists only, even if the length is 1.
+recommendations=recommender.predict_on_sql_table(test=[test_content,test_title])
 ```
 The returned recommendations is a simple python dictionary with length (k, the number of requested recommendations)\
 Each key in the dictionary represents the primary_key of that particular
