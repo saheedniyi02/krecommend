@@ -1,4 +1,4 @@
-# krecommend
+# <a href="https://github.com/saheedniyi02/krecommend">krecommend</a>
 A python package for creating content-based text recommender systems on pandas dataframes and SQLAlchemy tables.
 
 The recommendations are gotten by using cosine similarity to get similar items to a requested item and the top k similar items are then recommended.
