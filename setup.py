@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="krecommend",
-    version="0.0.1",
+    version="0.0.2",
     author="Saheed Azeez",
     author_email="saheedniyi02@gmail.com",
     description="A Python library for easily building  recommender systems for SQLAlchemy tables and pandas dataframe",
