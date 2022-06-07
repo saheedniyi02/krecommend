@@ -3,10 +3,21 @@ import pandas as pd
 from sklearn.metrics.pairwise import euclidean_distances, cosine_similarity
 import warnings
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+import re
+
+
+
+
+
+TAG_RE = re.compile(r'<[^>]+>')
+
+def remove_tags(text):
+    return TAG_RE.sub('', text)
 
 
 def clean_data(text):
     text = text.replace("\n", "")
+    text=remove_tags(text)
     return text
 
 
@@ -229,7 +240,7 @@ class KRecommend:
         }
         max_id = max(recommendations, key=recommendations.get)
         min_id = min(recommendations, key=recommendations.get)
-        if recommendations[max_id] > 98:
+        if recommendations[max_id] > 80:
             recommendations.pop(max_id)
         else:
             recommendations.pop(min_id)
@@ -275,7 +286,7 @@ class KRecommend:
         }
         max_id = max(recommendations, key=recommendations.get)
         min_id = min(recommendations, key=recommendations.get)
-        if recommendations[max_id] > 98:
+        if recommendations[max_id] > 80:
             recommendations.pop(max_id)
         else:
             recommendations.pop(min_id)
